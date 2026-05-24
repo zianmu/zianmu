@@ -10,8 +10,8 @@ const sarabun = Sarabun({
 })
 
 export const metadata: Metadata = {
-  title: 'ระบบจัดการผ้าลินิน | Linen Management',
-  description: 'ระบบจัดการผ้าลินินสำหรับโรงพยาบาล - Hospital Linen Management System',
+  title: 'ระบบจัดการโรงแรมเดอะพีค | Linen Management',
+  description: 'ะบบจัดการโรงแรมเดอะพีค - Hospital Linen Management System',
 }
 
 export const viewport: Viewport = {
