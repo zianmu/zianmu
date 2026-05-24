@@ -86,9 +86,9 @@ export default function LoginPage() {
               <ShirtIcon className="h-8 w-8 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">ระบบจัดการผ้าลินิน</CardTitle>
+          <CardTitle className="text-2xl font-bold">ระบบจัดการผ้า</CardTitle>
           <CardDescription>
-            เข้าสู่ระบบเพื่อจัดการผ้าลินินของคุณ
+            เข้าสู่ระบบเพื่อจัดการผ้า
           </CardDescription>
         </CardHeader>
         <CardContent>
