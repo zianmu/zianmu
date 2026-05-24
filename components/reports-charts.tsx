@@ -55,7 +55,7 @@ export function ReportsCharts({
       <Card className="lg:col-span-2">
         <CardHeader>
           <CardTitle>กิจกรรมรายวัน</CardTitle>
-          <CardDescription>จำนวนการเบิก, รับ และส่งซักผ้าลินินในแต่ละวัน</CardDescription>
+          <CardDescription>จำนวนการเบิก, รับ และส่งซักผ้าในแต่ละวัน</CardDescription>
         </CardHeader>
         <CardContent>
           {chartData.length === 0 ? (
@@ -113,7 +113,7 @@ export function ReportsCharts({
       <Card>
         <CardHeader>
           <CardTitle>สัดส่วนตามหมวดหมู่</CardTitle>
-          <CardDescription>จำนวนผ้าลินินทั้งหมดแยกตามหมวดหมู่</CardDescription>
+          <CardDescription>จำนวนผ้าทั้งหมดแยกตามหมวดหมู่</CardDescription>
         </CardHeader>
         <CardContent>
           {pieData.length === 0 ? (

@@ -44,7 +44,7 @@ export function AddItemDialog() {
 
       if (error) throw error
 
-      toast.success('เพิ่มผ้าลินินสำเร็จ')
+      toast.success('เพิ่มผ้าสำเร็จ')
       setOpen(false)
       setName('')
       setCategory('')
@@ -64,17 +64,17 @@ export function AddItemDialog() {
       <DialogTrigger asChild>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          เพิ่มผ้าลินินใหม่
+          เพิ่มผ้าใหม่
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>เพิ่มผ้าลินินใหม่</DialogTitle>
-          <DialogDescription>กรอกข้อมูลผ้าลินินที่ต้องการเพิ่มในระบบ</DialogDescription>
+          <DialogTitle>เพิ่มผ้าใหม่</DialogTitle>
+          <DialogDescription>กรอกข้อมูลผ้าที่ต้องการเพิ่มในระบบ</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">ชื่อผ้าลินิน</Label>
+            <Label htmlFor="name">ชื่อผ้า</Label>
             <Input
               id="name"
               placeholder="เช่น ผ้าปูที่นอน ขาว"

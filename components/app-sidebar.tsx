@@ -54,7 +54,7 @@ const menuItems = [
     icon: LayoutDashboard,
   },
   {
-    title: 'คลังผ้าลินิน',
+    title: 'คลังผ้า',
     url: '/inventory',
     icon: Package,
   },
@@ -150,7 +150,7 @@ export function AppSidebar({ children }: { children: React.ReactNode }) {
               <ShirtIcon className="h-5 w-5 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm font-semibold">ระบบผ้าลินิน</span>
+              <span className="text-sm font-semibold">ระบบผ้า</span>
               <span className="text-xs text-sidebar-foreground/70">Linen Management</span>
             </div>
           </div>

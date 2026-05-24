@@ -39,7 +39,7 @@ export function DeleteItemDialog({ item }: { item: LinenItem }) {
 
       if (error) throw error
 
-      toast.success('ลบผ้าลินินสำเร็จ')
+      toast.success('ลบผ้าสำเร็จ')
       router.refresh()
     } catch (error) {
       console.error('Error deleting item:', error)

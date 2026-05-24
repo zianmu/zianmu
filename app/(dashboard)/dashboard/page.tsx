@@ -6,23 +6,23 @@ import { RecentTransactions } from '@/components/recent-transactions'
 
 async function getDashboardStats() {
   const supabase = await createClient()
-  
+
   // Get linen items stats
   const { data: linenItems } = await supabase
     .from('linen_items')
     .select('*')
-  
+
   const totalItems = linenItems?.reduce((sum, item) => sum + item.total_quantity, 0) || 0
   const availableItems = linenItems?.reduce((sum, item) => sum + item.available_quantity, 0) || 0
   const inLaundry = linenItems?.reduce((sum, item) => sum + item.in_laundry, 0) || 0
   const lowStockItems = linenItems?.filter(item => item.available_quantity < item.minimum_stock) || []
-  
+
   // Get pending laundry batches
   const { data: pendingBatches } = await supabase
     .from('laundry_batches')
     .select('*')
     .eq('status', 'sent')
-  
+
   // Get recent transactions
   const { data: recentTransactions } = await supabase
     .from('transactions')
@@ -53,13 +53,13 @@ export default async function DashboardPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">แดชบอร์ด</h1>
-        <p className="text-muted-foreground">ภาพรวมระบบจัดการผ้าลินิน</p>
+        <p className="text-muted-foreground">ภาพรวมระบบจัดการผ้า</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">ผ้าลินินทั้งหมด</CardTitle>
+            <CardTitle className="text-sm font-medium">ผ้าทั้งหมด</CardTitle>
             <Package className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -105,8 +105,8 @@ export default async function DashboardPage() {
       <div className="grid gap-4 lg:grid-cols-7">
         <Card className="lg:col-span-4">
           <CardHeader>
-            <CardTitle>สรุปผ้าลินินตามประเภท</CardTitle>
-            <CardDescription>จำนวนผ้าลินินแยกตามประเภทและสถานะ</CardDescription>
+            <CardTitle>สรุปผ้าตามประเภท</CardTitle>
+            <CardDescription>จำนวนผ้าแยกตามประเภทและสถานะ</CardDescription>
           </CardHeader>
           <CardContent>
             <DashboardCharts linenItems={stats.linenItems} />

@@ -63,7 +63,7 @@ export function WithdrawDialog({ items }: { items: LinenItem[] }) {
 
     try {
       const qty = parseInt(quantity)
-      
+
       if (!selectedItemData || qty > selectedItemData.available_quantity) {
         toast.error('จำนวนเกินสต็อกที่มี')
         setLoading(false)
@@ -92,7 +92,7 @@ export function WithdrawDialog({ items }: { items: LinenItem[] }) {
 
       if (txError) throw txError
 
-      toast.success('เบิกผ้าลินินสำเร็จ')
+      toast.success('เบิกผ้าสำเร็จ')
       setOpen(false)
       setSelectedItem('')
       setQuantity('')
@@ -100,7 +100,7 @@ export function WithdrawDialog({ items }: { items: LinenItem[] }) {
       router.refresh()
     } catch (error) {
       console.error('Error withdrawing item:', error)
-      toast.error('เกิดข้อผิดพลาดในการเบิกผ้าลินิน')
+      toast.error('เกิดข้อผิดพลาดในการเบิกผ้า')
     } finally {
       setLoading(false)
     }
@@ -111,20 +111,20 @@ export function WithdrawDialog({ items }: { items: LinenItem[] }) {
       <DialogTrigger asChild>
         <Button variant="outline">
           <ArrowDownRight className="mr-2 h-4 w-4" />
-          เบิกผ้าลินิน
+          เบิกผ้า
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>เบิกผ้าลินิน</DialogTitle>
-          <DialogDescription>เลือกผ้าลินินและจำนวนที่ต้องการเบิก</DialogDescription>
+          <DialogTitle>เบิกผ้า</DialogTitle>
+          <DialogDescription>เลือกผ้าและจำนวนที่ต้องการเบิก</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="item">เลือกผ้าลินิน</Label>
+            <Label htmlFor="item">เลือกผ้า</Label>
             <Select value={selectedItem} onValueChange={setSelectedItem}>
               <SelectTrigger>
-                <SelectValue placeholder="เลือกผ้าลินิน" />
+                <SelectValue placeholder="เลือกผ้า" />
               </SelectTrigger>
               <SelectContent>
                 {items.filter(item => item.available_quantity > 0).map((item) => (

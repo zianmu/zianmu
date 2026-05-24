@@ -31,7 +31,7 @@ export function DashboardCharts({ linenItems }: { linenItems: LinenItem[] }) {
   if (categoryData.length === 0) {
     return (
       <div className="flex h-[300px] items-center justify-center text-muted-foreground">
-        ยังไม่มีข้อมูลผ้าลินิน
+        ยังไม่มีข้อมูลผ้า
       </div>
     )
   }
@@ -39,13 +39,13 @@ export function DashboardCharts({ linenItems }: { linenItems: LinenItem[] }) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={categoryData}>
-        <XAxis 
-          dataKey="category" 
+        <XAxis
+          dataKey="category"
           tick={{ fontSize: 12 }}
           tickLine={false}
           axisLine={false}
         />
-        <YAxis 
+        <YAxis
           tick={{ fontSize: 12 }}
           tickLine={false}
           axisLine={false}
@@ -58,16 +58,16 @@ export function DashboardCharts({ linenItems }: { linenItems: LinenItem[] }) {
           }}
         />
         <Legend />
-        <Bar 
-          dataKey="available" 
-          name="พร้อมใช้งาน" 
-          fill="hsl(var(--chart-2))" 
+        <Bar
+          dataKey="available"
+          name="พร้อมใช้งาน"
+          fill="hsl(var(--chart-2))"
           radius={[4, 4, 0, 0]}
         />
-        <Bar 
-          dataKey="inLaundry" 
-          name="อยู่ระหว่างซัก" 
-          fill="hsl(var(--chart-1))" 
+        <Bar
+          dataKey="inLaundry"
+          name="อยู่ระหว่างซัก"
+          fill="hsl(var(--chart-1))"
           radius={[4, 4, 0, 0]}
         />
       </BarChart>
