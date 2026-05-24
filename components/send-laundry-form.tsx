@@ -168,12 +168,12 @@ export function SendLaundryForm({ items }: { items: LinenItem[] }) {
     <div className="grid gap-6 lg:grid-cols-2">
       <Card>
         <CardHeader>
-          <CardTitle>เลือกผ้าลินินที่จะส่งซัก</CardTitle>
+          <CardTitle>เลือกผ้าที่จะส่งซัก</CardTitle>
           <CardDescription>คลิกเพื่อเพิ่มรายการลงในล็อตส่งซัก</CardDescription>
         </CardHeader>
         <CardContent>
           {availableItems.length === 0 ? (
-            <p className="text-center text-muted-foreground py-8">ไม่มีผ้าลินินที่พร้อมส่งซัก</p>
+            <p className="text-center text-muted-foreground py-8">ไม่มีผ้าที่พร้อมส่งซัก</p>
           ) : (
             <div className="grid gap-2">
               {availableItems.map((item) => {

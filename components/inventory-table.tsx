@@ -62,7 +62,7 @@ export function InventoryTable({ items, isAdmin }: { items: LinenItem[]; isAdmin
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="ค้นหาชื่อผ้าลินิน..."
+            placeholder="ค้นหาชื่อผ้า..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -90,7 +90,7 @@ export function InventoryTable({ items, isAdmin }: { items: LinenItem[]; isAdmin
           <p className="text-sm text-muted-foreground">
             {search || categoryFilter !== 'all'
               ? 'ลองเปลี่ยนคำค้นหาหรือตัวกรอง'
-              : 'เพิ่มผ้าลินินใหม่เพื่อเริ่มต้น'}
+              : 'เพิ่มผ้าใหม่เพื่อเริ่มต้น'}
           </p>
         </div>
       ) : (

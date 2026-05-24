@@ -112,14 +112,14 @@ export function ReceiveStockDialog({ items }: { items: LinenItem[] }) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>รับสต็อกใหม่</DialogTitle>
-          <DialogDescription>เพิ่มจำนวนผ้าลินินจากการรับของใหม่</DialogDescription>
+          <DialogDescription>เพิ่มจำนวนผ้าจากการรับของใหม่</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="item">เลือกผ้าลินิน</Label>
+            <Label htmlFor="item">เลือกผ้า</Label>
             <Select value={selectedItem} onValueChange={setSelectedItem}>
               <SelectTrigger>
-                <SelectValue placeholder="เลือกผ้าลินิน" />
+                <SelectValue placeholder="เลือกผ้า" />
               </SelectTrigger>
               <SelectContent>
                 {items.map((item) => (

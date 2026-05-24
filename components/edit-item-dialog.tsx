@@ -74,12 +74,12 @@ export function EditItemDialog({ item }: { item: LinenItem }) {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>แก้ไขข้อมูลผ้าลินิน</DialogTitle>
-          <DialogDescription>แก้ไขข้อมูลผ้าลินิน {item.name}</DialogDescription>
+          <DialogTitle>แก้ไขข้อมูลผ้า</DialogTitle>
+          <DialogDescription>แก้ไขข้อมูลผ้า {item.name}</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="edit-name">ชื่อผ้าลินิน</Label>
+            <Label htmlFor="edit-name">ชื่อผ้า</Label>
             <Input
               id="edit-name"
               value={name}

@@ -72,7 +72,7 @@ export function TransactionsTable({ transactions }: { transactions: Transaction[
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="ค้นหาตามชื่อผ้าลินิน, ผู้ดำเนินการ, หมายเหตุ..."
+            placeholder="ค้นหาตามชื่อผ้า, ผู้ดำเนินการ, หมายเหตุ..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -110,7 +110,7 @@ export function TransactionsTable({ transactions }: { transactions: Transaction[
               <TableRow>
                 <TableHead>วันที่/เวลา</TableHead>
                 <TableHead>ประเภท</TableHead>
-                <TableHead>ผ้าลินิน</TableHead>
+                <TableHead>ผ้า</TableHead>
                 <TableHead className="text-right">จำนวน</TableHead>
                 <TableHead>ผู้ดำเนินการ</TableHead>
                 <TableHead>หมายเหตุ</TableHead>

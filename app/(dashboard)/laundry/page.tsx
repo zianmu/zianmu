@@ -6,7 +6,7 @@ import { LaundryBatchesTable } from '@/components/laundry-batches-table'
 
 async function getData() {
   const supabase = await createClient()
-  
+
   const [linenItemsResult, batchesResult] = await Promise.all([
     supabase.from('linen_items').select('*').order('category').order('name'),
     supabase
@@ -37,7 +37,7 @@ export default async function LaundryPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">ส่ง/รับซักผ้า</h1>
-        <p className="text-muted-foreground">จัดการการส่งและรับผ้าลินินจากร้านซัก</p>
+        <p className="text-muted-foreground">จัดการการส่งและรับผ้าจากร้านซัก</p>
       </div>
 
       <Tabs defaultValue="send" className="space-y-4">
