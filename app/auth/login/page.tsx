@@ -21,7 +21,7 @@ import { Loader2, ShirtIcon, AlertCircle, ShieldCheck } from 'lucide-react'
 const ADMIN_CODE = '2532'
 
 export default function LoginPage() {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -42,28 +42,14 @@ export default function LoginPage() {
         return
       }
 
-      // Look up email by username
-      const res = await fetch('/api/auth/get-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: username }),
-      })
-
-      const data = await res.json()
-
-      if (!res.ok) {
-        setError(data.error || 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
-        return
-      }
-
       const { error } = await supabase.auth.signInWithPassword({
-        email: data.email,
+        email,
         password,
       })
 
       if (error) {
         if (error.message === 'Invalid login credentials') {
-          setError('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
+          setError('อีเมลหรือรหัสผ่านไม่ถูกต้อง')
         } else {
           setError(error.message)
         }
@@ -100,9 +86,9 @@ export default function LoginPage() {
               <ShirtIcon className="h-8 w-8 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">ระบบจัดการผ้าโรงแรมเดอะพีค</CardTitle>
+          <CardTitle className="text-2xl font-bold">ระบบจัดการผ้าลินิน</CardTitle>
           <CardDescription>
-            เข้าสู่ระบบเพื่อจัดการผ้าโรงแรมเดอะพีคของคุณ
+            เข้าสู่ระบบเพื่อจัดการผ้าลินินของคุณ
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -115,13 +101,13 @@ export default function LoginPage() {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="username">ชื่อผู้ใช้</Label>
+              <Label htmlFor="email">อีเมล</Label>
               <Input
-                id="username"
-                type="text"
-                placeholder="กรอกชื่อผู้ใช้"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                id="email"
+                type="email"
+                placeholder="email@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={loading}
               />
